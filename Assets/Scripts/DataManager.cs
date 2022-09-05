@@ -12,6 +12,7 @@ public class DataManager
     public int Level
     {
         get => level;
+        set => level = value;
     }
 
     ulong count = 0;
