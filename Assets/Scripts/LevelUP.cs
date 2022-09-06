@@ -33,15 +33,15 @@ public class LevelUP : MonoBehaviour
     private void Start()
     {
         button0.GetComponent<TextMeshProUGUI>();
-        button0.text = $"0\nLevel{skill_Level[0]}\nNextCost:{GetCost(skill_Level[0], 0)}";
+        button0.text = $"0\nLevel{skill_Level[0]}\nNextCost:{GetCost(skill_Level[0], 0).ToString("N0")}";
         button1.GetComponent<TextMeshProUGUI>();
-        button1.text = $"1\nLevel{skill_Level[1]}\nNextCost:{GetCost(skill_Level[1], 1)}";
+        button1.text = $"1\nLevel{skill_Level[1]}\nNextCost:{GetCost(skill_Level[1], 1).ToString("N0")}";
         button2.GetComponent<TextMeshProUGUI>();
-        button2.text = $"2\nLevel{skill_Level[2]}\nNextCost:{GetCost(skill_Level[2], 2)}";
+        button2.text = $"2\nLevel{skill_Level[2]}\nNextCost:{GetCost(skill_Level[2], 2).ToString("N0")}";
         button3.GetComponent<TextMeshProUGUI>();
-        button3.text = $"3\nLevel{skill_Level[3]}\nNextCost:{GetCost(skill_Level[3], 3)}";
+        button3.text = $"3\nLevel{skill_Level[3]}\nNextCost:{GetCost(skill_Level[3], 3).ToString("N0")}";
         button4.GetComponent<TextMeshProUGUI>();
-        button4.text = $"4\nLevel{skill_Level[4]}\nNextCost:{GetCost(skill_Level[4], 4)}";
+        button4.text = $"4\nLevel{skill_Level[4]}\nNextCost:{GetCost(skill_Level[4], 4).ToString("N0")}";
     }
 
     public void OnButton0Clecked()
@@ -50,7 +50,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(skill_Level[0], 0);
             skill_Level[0]++;
-            button0.text = $"0\nLevel{skill_Level[0]}\nNextCost:{GetCost(skill_Level[0], 0)}";
+            button0.text = $"0\nLevel{skill_Level[0]}\nNextCost:{GetCost(skill_Level[0], 0).ToString("N0")}";
         }
         
     }
@@ -61,7 +61,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(skill_Level[1], 1);
             skill_Level[1]++;
-            button1.text = $"1\nLevel{skill_Level[1]}\nNextCost:{GetCost(skill_Level[1], 1)}";
+            button1.text = $"1\nLevel{skill_Level[1]}\nNextCost:{GetCost(skill_Level[1], 1).ToString("N0")}";
         }
     }
 
@@ -71,7 +71,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(skill_Level[2], 2);
             skill_Level[2]++;
-            button2.text = $"2\nLevel{skill_Level[2]}\nNextCost:{GetCost(skill_Level[2], 2)}";
+            button2.text = $"2\nLevel{skill_Level[2]}\nNextCost:{GetCost(skill_Level[2], 2).ToString("N0")}";
         }
     }
 
@@ -81,7 +81,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(skill_Level[3], 3);
             skill_Level[3]++;
-            button3.text = $"3\nLevel{skill_Level[3]}\nNextCost:{GetCost(skill_Level[3], 3)}";
+            button3.text = $"3\nLevel{skill_Level[3]}\nNextCost:{GetCost(skill_Level[3], 3).ToString("N0")}";
         }
     }
 
@@ -91,7 +91,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(skill_Level[4], 4);
             skill_Level[4]++;
-            button4.text = $"4\nLevel{skill_Level[4]}\nNextCost:{GetCost(skill_Level[4], 4)}";
+            button4.text = $"4\nLevel{skill_Level[4]}\nNextCost:{GetCost(skill_Level[4], 4).ToString("N0")}";
         }
     }
 
