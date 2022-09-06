@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DataManager
@@ -8,14 +6,14 @@ public class DataManager
     public static DataManager Instance => _instance;
     DataManager() { }
 
-    int level = 1;
+    int level = PlayerPrefs.GetInt("Level", 1);
     public int Level
     {
         get => level;
         set => level = value;
     }
 
-    ulong count = 0;
+    ulong count = ulong.Parse(PlayerPrefs.GetString("Count", "0"));
     public ulong Count
     {
         get => count;
@@ -24,8 +22,8 @@ public class DataManager
 
     public void Load()
     {
-        level = PlayerPrefs.GetInt("Level");
-        count = ulong.Parse(PlayerPrefs.GetString("Count"));
+        level = PlayerPrefs.GetInt("Level",1);
+        count = ulong.Parse(PlayerPrefs.GetString("Count","0"));
     }
 
     public void Save()

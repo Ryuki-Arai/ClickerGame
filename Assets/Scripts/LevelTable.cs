@@ -22,7 +22,7 @@ public class LevelTable
         {
             next_exp = level_table[_iskey];
         }
-        catch(KeyNotFoundException e)
+        catch(KeyNotFoundException)
         {
             next_exp = level_table[level_table.Count];
         }

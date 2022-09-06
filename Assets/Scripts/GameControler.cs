@@ -21,10 +21,14 @@ public class GameControler : MonoBehaviour
         _slider.maxValue = LevelTable.GetEXP(DataManager.Instance.Level);
     }
 
+    private void Update()
+    {
+        _counter_Text.text = DataManager.Instance.Count.ToString("N0");
+    }
+
     public void Click()
     {
         Instantiate(_effect_Text,transform);
-        DataManager.Instance.Count++;
         _slider.value++;
         if(_slider.value >= _slider.maxValue)
         {
@@ -33,6 +37,5 @@ public class GameControler : MonoBehaviour
             _slider.value = 0;
             _slider.maxValue = LevelTable.GetEXP(DataManager.Instance.Level);
         }
-        _counter_Text.text = DataManager.Instance.Count.ToString("N0");
     }
 }
