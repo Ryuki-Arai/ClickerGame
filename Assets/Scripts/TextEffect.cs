@@ -7,7 +7,7 @@ public class TextEffect : MonoBehaviour
     private void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-        var count = DataManager.Instance.Level;
+        var count = Mathf.Pow(2,DataManager.Instance.Level-1);
         DataManager.Instance.Count += (ulong)(count);
         text.text = $"+{count.ToString("N0")}" ;
     }

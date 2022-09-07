@@ -14,84 +14,79 @@ public class LevelUP : MonoBehaviour
     [SerializeField] TextMeshProUGUI button4;
     [SerializeField] TextAsset _lebeluptable;
     [SerializeField] TextAsset _skillcost;
-    static int[] skill_Level = new int[5];
     ulong[] dummy = {10,100,1000,10000,100000};
     List<ulong[]> skill_Cost = new List<ulong[]>();
     float _time;
 
-    static public int Skill_Level(int index)
-    {
-        return skill_Level[index];
-    }
-
     private void Awake()
     {
+        DataManager.Load();
         LevelTable.LoadFile(_lebeluptable.name);
         LoadFile(_skillcost.name);
     }
-
+    
     private void Start()
     {
         button0.GetComponent<TextMeshProUGUI>();
-        button0.text = $"0\nLevel{skill_Level[0]}\nNextCost:{GetCost(skill_Level[0], 0).ToString("N0")}";
+        button0.text = $"0\nLevel{DataManager.GetSkillLevel(0)}\nNextCost:{GetCost(DataManager.GetSkillLevel(0), 0).ToString("N0")}";
         button1.GetComponent<TextMeshProUGUI>();
-        button1.text = $"1\nLevel{skill_Level[1]}\nNextCost:{GetCost(skill_Level[1], 1).ToString("N0")}";
+        button1.text = $"1\nLevel{DataManager.GetSkillLevel(1)}\nNextCost:{GetCost(DataManager.GetSkillLevel(1), 1).ToString("N0")}";
         button2.GetComponent<TextMeshProUGUI>();
-        button2.text = $"2\nLevel{skill_Level[2]}\nNextCost:{GetCost(skill_Level[2], 2).ToString("N0")}";
+        button2.text = $"2\nLevel{DataManager.GetSkillLevel(2)}\nNextCost:{GetCost(DataManager.GetSkillLevel(2), 2).ToString("N0")}";
         button3.GetComponent<TextMeshProUGUI>();
-        button3.text = $"3\nLevel{skill_Level[3]}\nNextCost:{GetCost(skill_Level[3], 3).ToString("N0")}";
+        button3.text = $"3\nLevel{DataManager.GetSkillLevel(3)}\nNextCost:{GetCost(DataManager.GetSkillLevel(3), 3).ToString("N0")}";
         button4.GetComponent<TextMeshProUGUI>();
-        button4.text = $"4\nLevel{skill_Level[4]}\nNextCost:{GetCost(skill_Level[4], 4).ToString("N0")}";
+        button4.text = $"4\nLevel{DataManager.GetSkillLevel(4)}\nNextCost:{GetCost(DataManager.GetSkillLevel(4), 4).ToString("N0")}";
     }
 
     public void OnButton0Clecked()
     {
-        if(DataManager.Instance.Count >= GetCost(skill_Level[0], 0))
+        if(DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(0), 0))
         {
-            DataManager.Instance.Count -= GetCost(skill_Level[0], 0);
-            skill_Level[0]++;
-            button0.text = $"0\nLevel{skill_Level[0]}\nNextCost:{GetCost(skill_Level[0], 0).ToString("N0")}";
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(0), 0);
+            DataManager.SetSkillLevel(0);
+            button0.text = $"0\nLevel{DataManager.GetSkillLevel(0)}\nNextCost:{GetCost(DataManager.GetSkillLevel(0), 0).ToString("N0")}";
         }
         
     }
 
     public void OnButton1Clecked()
     {
-        if(DataManager.Instance.Count >= GetCost(skill_Level[1], 1))
+        if(DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(1), 1))
         {
-            DataManager.Instance.Count -= GetCost(skill_Level[1], 1);
-            skill_Level[1]++;
-            button1.text = $"1\nLevel{skill_Level[1]}\nNextCost:{GetCost(skill_Level[1], 1).ToString("N0")}";
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(1), 1);
+            DataManager.SetSkillLevel(1);
+            button1.text = $"1\nLevel{DataManager.GetSkillLevel(1)}\nNextCost:{GetCost(DataManager.GetSkillLevel(1), 1).ToString("N0")}";
         }
     }
 
     public void OnButton2Clecked()
     {
-        if (DataManager.Instance.Count >= GetCost(skill_Level[2], 2))
+        if (DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(2), 2))
         {
-            DataManager.Instance.Count -= GetCost(skill_Level[2], 2);
-            skill_Level[2]++;
-            button2.text = $"2\nLevel{skill_Level[2]}\nNextCost:{GetCost(skill_Level[2], 2).ToString("N0")}";
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(2), 2);
+            DataManager.SetSkillLevel(2);
+            button2.text = $"2\nLevel{DataManager.GetSkillLevel(2)}\nNextCost:{GetCost(DataManager.GetSkillLevel(2), 2).ToString("N0")}";
         }
     }
 
     public void OnButton3Clecked()
     {
-        if (DataManager.Instance.Count >= GetCost(skill_Level[3], 3))
+        if (DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(3), 3))
         {
-            DataManager.Instance.Count -= GetCost(skill_Level[3], 3);
-            skill_Level[3]++;
-            button3.text = $"3\nLevel{skill_Level[3]}\nNextCost:{GetCost(skill_Level[3], 3).ToString("N0")}";
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(3), 3);
+            DataManager.SetSkillLevel(3);
+            button3.text = $"3\nLevel{DataManager.GetSkillLevel(3)}\nNextCost:{GetCost(DataManager.GetSkillLevel(3), 3).ToString("N0")}";
         }
     }
 
     public void OnButton4Clecked()
     {
-        if (DataManager.Instance.Count >= GetCost(skill_Level[4], 4))
+        if (DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(4), 4))
         {
-            DataManager.Instance.Count -= GetCost(skill_Level[4], 4);
-            skill_Level[4]++;
-            button4.text = $"4\nLevel{skill_Level[4]}\nNextCost:{GetCost(skill_Level[4], 4).ToString("N0")}";
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(4), 4);
+            DataManager.SetSkillLevel(4);
+            button4.text = $"4\nLevel{DataManager.GetSkillLevel(4)}\nNextCost:{GetCost(DataManager.GetSkillLevel(4), 4).ToString("N0")}";
         }
     }
 
@@ -102,9 +97,9 @@ public class LevelUP : MonoBehaviour
         {
             next_exp = skill_Cost[_iskey][_index];
         }
-        catch (KeyNotFoundException)
+        catch (ArgumentOutOfRangeException)
         {
-            next_exp = skill_Cost[skill_Cost.Count][_index];
+            next_exp = skill_Cost[skill_Cost.Count-1][_index];
         }
         return next_exp;
     }

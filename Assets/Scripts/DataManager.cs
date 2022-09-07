@@ -6,30 +6,48 @@ public class DataManager
     public static DataManager Instance => _instance;
     DataManager() { }
 
-    int level = PlayerPrefs.GetInt("Level", 1);
+    static int level = 1;
     public int Level
     {
         get => level;
         set => level = value;
     }
 
-    ulong count = ulong.Parse(PlayerPrefs.GetString("Count", "0"));
+    static ulong count = 1;
     public ulong Count
     {
         get => count;
         set => count = value;
     }
 
-    public void Load()
+    static int[] skill_Level = new int[5];
+    static public int GetSkillLevel(int index)
+    {
+        return skill_Level[index];
+    }
+    static public void SetSkillLevel(int index)
+    {
+        skill_Level[index]++;
+    }
+
+    static public void Load()
     {
         level = PlayerPrefs.GetInt("Level",1);
         count = ulong.Parse(PlayerPrefs.GetString("Count","0"));
+        for(int i = 0; i < skill_Level.Length; i++)
+        {
+            skill_Level[i] = PlayerPrefs.GetInt($"Skill{i}",0);
+        }
     }
 
     public void Save()
     {
         PlayerPrefs.SetInt("Level", level);
         PlayerPrefs.SetString("Count",count.ToString());
+        for (int i = 0; i < skill_Level.Length; i++)
+        {
+            PlayerPrefs.SetInt($"Skill{i}", skill_Level[i]);
+        }
         PlayerPrefs.Save();
     }
 }

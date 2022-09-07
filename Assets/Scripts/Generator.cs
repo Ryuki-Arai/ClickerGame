@@ -12,11 +12,11 @@ public class Generator : MonoBehaviour
         _time += Time.deltaTime;
         if(_time >= 1f)
         {
-            count += LevelUP.Skill_Level(0) * 0.1f * DataManager.Instance.Level;
-            count += LevelUP.Skill_Level(1) * 1 * DataManager.Instance.Level;
-            count += LevelUP.Skill_Level(2) * 3 * DataManager.Instance.Level;
-            count += LevelUP.Skill_Level(3) * 5 * DataManager.Instance.Level;
-            count += LevelUP.Skill_Level(4) * 10 * DataManager.Instance.Level;
+            count += DataManager.GetSkillLevel(0) * 0.1f * DataManager.Instance.Level;
+            count += DataManager.GetSkillLevel(1) * 1 * DataManager.Instance.Level;
+            count += DataManager.GetSkillLevel(2) * 3 * DataManager.Instance.Level;
+            count += DataManager.GetSkillLevel(3) * 5 * DataManager.Instance.Level;
+            count += DataManager.GetSkillLevel(4) * 10 * DataManager.Instance.Level;
             var integer = Mathf.Floor(count);
             DataManager.Instance.Count += (ulong)integer;
             count -= integer;
