@@ -1,3 +1,4 @@
+using System.Numerics;
 using UnityEngine;
 
 public class DataManager
@@ -13,8 +14,8 @@ public class DataManager
         set => level = value;
     }
 
-    static ulong count = 1;
-    public ulong Count
+    static BigInteger count = 1;
+    public BigInteger Count
     {
         get => count;
         set => count = value;
@@ -33,7 +34,7 @@ public class DataManager
     static public void Load()
     {
         level = PlayerPrefs.GetInt("Level",1);
-        count = ulong.Parse(PlayerPrefs.GetString("Count","0"));
+        count = BigInteger.Parse(PlayerPrefs.GetString("Count","0"));
         for(int i = 0; i < skill_Level.Length; i++)
         {
             skill_Level[i] = PlayerPrefs.GetInt($"Skill{i}",0);

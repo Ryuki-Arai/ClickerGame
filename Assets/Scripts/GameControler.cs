@@ -23,7 +23,7 @@ public class GameControler : MonoBehaviour
 
     private void Update()
     {
-        _counter_Text.text = DataManager.Instance.Count.ToString("N0");
+        _counter_Text.text = Numeral.Numelal(DataManager.Instance.Count);//DataManager.Instance.Count.ToString("N0");
     }
 
     public void Click()

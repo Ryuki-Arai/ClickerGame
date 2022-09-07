@@ -1417,6 +1417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814440623}
   - component: {fileID: 814440624}
+  - component: {fileID: 814440625}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1475,6 +1476,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &814440625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814440622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &844382363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,8 +1879,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1442588661}
   m_HandleRect: {fileID: 1442588660}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.96685714
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2294,7 +2309,7 @@ MonoBehaviour:
   button3: {fileID: 406869691}
   button4: {fileID: 655147450}
   _lebeluptable: {fileID: 4900000, guid: fe5ed77120568194bab962f31512fb92, type: 3}
-  _skillcost: {fileID: 4900000, guid: 2c295b6f55187e24b951aea353dad964, type: 3}
+  _skillcost: {fileID: 4900000, guid: c74179f63cedb5f469cda62374be234e, type: 3}
 --- !u!114 &1090560356
 MonoBehaviour:
   m_ObjectHideFlags: 0

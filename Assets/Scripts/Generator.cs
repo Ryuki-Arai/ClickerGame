@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +21,7 @@ public class Generator : MonoBehaviour
             count += DataManager.GetSkillLevel(3) * 100 * DataManager.Instance.Level;
             count += DataManager.GetSkillLevel(4) * 500 * DataManager.Instance.Level;
             var integer = Mathf.Floor(count);
-            DataManager.Instance.Count += (ulong)integer;
+            DataManager.Instance.Count += (BigInteger)integer;
             count -= integer;
             _time = 0f;
         }

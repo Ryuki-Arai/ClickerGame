@@ -1,3 +1,4 @@
+using System.Numerics;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class TextEffect : MonoBehaviour
     {
         text = GetComponent<TextMeshProUGUI>();
         var count = Mathf.Pow(2,DataManager.Instance.Level-1);
-        DataManager.Instance.Count += (ulong)(count);
+        DataManager.Instance.Count += (BigInteger)(count);
         text.text = $"+{count.ToString("N0")}" ;
     }
     public void Destroy()
