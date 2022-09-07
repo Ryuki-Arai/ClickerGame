@@ -15,7 +15,7 @@ public class LevelUP : MonoBehaviour
     [SerializeField] TextAsset _lebeluptable;
     [SerializeField] TextAsset _skillcost;
     ulong[] dummy = {10,100,1000,10000,100000};
-    List<ulong[]> skill_Cost = new List<ulong[]>();
+    static List<ulong[]> skill_Cost = new List<ulong[]>();
     float _time;
 
     private void Awake()
@@ -90,7 +90,7 @@ public class LevelUP : MonoBehaviour
         }
     }
 
-    public ulong GetCost(int _iskey, int _index)
+    static public ulong GetCost(int _iskey, int _index)
     {
         ulong next_exp;
         try

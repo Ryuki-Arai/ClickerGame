@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Generator : MonoBehaviour
 {
+    [SerializeField] Button[] _button;
     float _time;
     float count;
 
@@ -21,6 +23,14 @@ public class Generator : MonoBehaviour
             DataManager.Instance.Count += (ulong)integer;
             count -= integer;
             _time = 0f;
+        }
+        for(var i = 0; i < _button.Length; i++)
+        {
+            if(LevelUP.GetCost(DataManager.GetSkillLevel(i),i) > DataManager.Instance.Count)
+            {
+                _button[i].GetComponent<Button>().interactable = false;
+            }
+            else _button[i].GetComponent<Button>().interactable = true;
         }
     }
 }
