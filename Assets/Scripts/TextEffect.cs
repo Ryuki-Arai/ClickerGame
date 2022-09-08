@@ -8,9 +8,9 @@ public class TextEffect : MonoBehaviour
     private void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-        var count = Mathf.Pow(2,DataManager.Instance.Level-1);
-        DataManager.Instance.Count += (BigInteger)(count);
-        text.text = $"+{count.ToString("N0")}" ;
+        var count = (BigInteger)Mathf.Pow(2,DataManager.Instance.Level-1);
+        DataManager.Instance.Count += (count);
+        text.text = $"+{Numeral.Numelal(count)}" ;
     }
     public void Destroy()
     {

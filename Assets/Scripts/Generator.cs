@@ -18,8 +18,8 @@ public class Generator : MonoBehaviour
             count += DataManager.GetSkillLevel(0) * 0.1f * DataManager.Instance.Level;
             count += DataManager.GetSkillLevel(1) * 1 * DataManager.Instance.Level;
             count += DataManager.GetSkillLevel(2) * 15 * DataManager.Instance.Level;
-            count += DataManager.GetSkillLevel(3) * 100 * DataManager.Instance.Level;
-            count += DataManager.GetSkillLevel(4) * 500 * DataManager.Instance.Level;
+            count += DataManager.GetSkillLevel(3) * 200 * DataManager.Instance.Level;
+            count += DataManager.GetSkillLevel(4) * 2500 * DataManager.Instance.Level;
             var integer = Mathf.Floor(count);
             DataManager.Instance.Count += (BigInteger)integer;
             count -= integer;

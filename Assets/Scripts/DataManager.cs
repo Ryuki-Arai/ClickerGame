@@ -34,7 +34,7 @@ public class DataManager
     static public void Load()
     {
         level = PlayerPrefs.GetInt("Level",1);
-        count = BigInteger.Parse(PlayerPrefs.GetString("Count","0"));
+        count = BigInteger.Parse(PlayerPrefs.GetString("Count", "0"));
         for(int i = 0; i < skill_Level.Length; i++)
         {
             skill_Level[i] = PlayerPrefs.GetInt($"Skill{i}",0);

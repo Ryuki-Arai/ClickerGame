@@ -3,6 +3,7 @@ using TMPro;
 using System.IO;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 public class LevelUP : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(0), 0);
             DataManager.SetSkillLevel(0);
-            button0.text = $"0\nLevel{DataManager.GetSkillLevel(0)}\nNextCost:{GetCost(DataManager.GetSkillLevel(0), 0).ToString("N0")}";
+            button0.text = $"0\nLevel{DataManager.GetSkillLevel(0)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(0), 0))}";
         }
         
     }
@@ -56,7 +57,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(1), 1);
             DataManager.SetSkillLevel(1);
-            button1.text = $"1\nLevel{DataManager.GetSkillLevel(1)}\nNextCost:{GetCost(DataManager.GetSkillLevel(1), 1).ToString("N0")}";
+            button1.text = $"1\nLevel{DataManager.GetSkillLevel(1)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(1), 1))}";
         }
     }
 
@@ -66,7 +67,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(2), 2);
             DataManager.SetSkillLevel(2);
-            button2.text = $"2\nLevel{DataManager.GetSkillLevel(2)}\nNextCost:{GetCost(DataManager.GetSkillLevel(2), 2).ToString("N0")}";
+            button2.text = $"2\nLevel{DataManager.GetSkillLevel(2)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(2), 2))}";
         }
     }
 
@@ -76,7 +77,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(3), 3);
             DataManager.SetSkillLevel(3);
-            button3.text = $"3\nLevel{DataManager.GetSkillLevel(3)}\nNextCost:{GetCost(DataManager.GetSkillLevel(3), 3).ToString("N0")}";
+            button3.text = $"3\nLevel{DataManager.GetSkillLevel(3)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(3), 3))}";
         }
     }
 
@@ -86,13 +87,13 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(4), 4);
             DataManager.SetSkillLevel(4);
-            button4.text = $"4\nLevel{DataManager.GetSkillLevel(4)}\nNextCost:{GetCost(DataManager.GetSkillLevel(4), 4).ToString("N0")}";
+            button4.text = $"4\nLevel{DataManager.GetSkillLevel(4)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(4), 4))}";
         }
     }
 
-    static public ulong GetCost(int _iskey, int _index)
+    static public BigInteger GetCost(int _iskey, int _index)
     {
-        ulong next_exp;
+        BigInteger next_exp;
         try
         {
             next_exp = skill_Cost[_iskey][_index];
