@@ -29,15 +29,15 @@ public class LevelUP : MonoBehaviour
     private void Start()
     {
         button0.GetComponent<TextMeshProUGUI>();
-        button0.text = $"0\nLevel{DataManager.GetSkillLevel(0)}\nNextCost:{GetCost(DataManager.GetSkillLevel(0), 0).ToString("N0")}";
+        button0.text = $"ícéq\nLevel{DataManager.GetSkillLevel(0)}\néü:{GetCost(DataManager.GetSkillLevel(0), 0).ToString("N0")}";
         button1.GetComponent<TextMeshProUGUI>();
-        button1.text = $"1\nLevel{DataManager.GetSkillLevel(1)}\nNextCost:{GetCost(DataManager.GetSkillLevel(1), 1).ToString("N0")}";
+        button1.text = $"Ç∑Ç∑Ç´\nLevel{DataManager.GetSkillLevel(1)}\néü:{GetCost(DataManager.GetSkillLevel(1), 1).ToString("N0")}";
         button2.GetComponent<TextMeshProUGUI>();
-        button2.text = $"2\nLevel{DataManager.GetSkillLevel(2)}\nNextCost:{GetCost(DataManager.GetSkillLevel(2), 2).ToString("N0")}";
+        button2.text = $"îu\nLevel{DataManager.GetSkillLevel(2)}\néü:{GetCost(DataManager.GetSkillLevel(2), 2).ToString("N0")}";
         button3.GetComponent<TextMeshProUGUI>();
-        button3.text = $"3\nLevel{DataManager.GetSkillLevel(3)}\nNextCost:{GetCost(DataManager.GetSkillLevel(3), 3).ToString("N0")}";
+        button3.text = $"ìe\nLevel{DataManager.GetSkillLevel(3)}\néü:{GetCost(DataManager.GetSkillLevel(3), 3).ToString("N0")}";
         button4.GetComponent<TextMeshProUGUI>();
-        button4.text = $"4\nLevel{DataManager.GetSkillLevel(4)}\nNextCost:{GetCost(DataManager.GetSkillLevel(4), 4).ToString("N0")}";
+        button4.text = $"åé…êŒ\nLevel{DataManager.GetSkillLevel(4)}\néü:{GetCost(DataManager.GetSkillLevel(4), 4).ToString("N0")}";
     }
 
     public void OnButton0Clecked()
@@ -46,7 +46,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(0), 0);
             DataManager.SetSkillLevel(0);
-            button0.text = $"0\nLevel{DataManager.GetSkillLevel(0)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(0), 0))}";
+            button0.text = $"ícéq\nLevel{DataManager.GetSkillLevel(0)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(0), 0))}";
         }
         
     }
@@ -57,7 +57,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(1), 1);
             DataManager.SetSkillLevel(1);
-            button1.text = $"1\nLevel{DataManager.GetSkillLevel(1)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(1), 1))}";
+            button1.text = $"Ç∑Ç∑Ç´\nLevel{DataManager.GetSkillLevel(1)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(1), 1))}";
         }
     }
 
@@ -67,7 +67,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(2), 2);
             DataManager.SetSkillLevel(2);
-            button2.text = $"2\nLevel{DataManager.GetSkillLevel(2)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(2), 2))}";
+            button2.text = $"îu\nLevel{DataManager.GetSkillLevel(2)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(2), 2))}";
         }
     }
 
@@ -77,7 +77,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(3), 3);
             DataManager.SetSkillLevel(3);
-            button3.text = $"3\nLevel{DataManager.GetSkillLevel(3)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(3), 3))}";
+            button3.text = $"ìe\nLevel{DataManager.GetSkillLevel(3)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(3), 3))}";
         }
     }
 
@@ -87,7 +87,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(4), 4);
             DataManager.SetSkillLevel(4);
-            button4.text = $"4\nLevel{DataManager.GetSkillLevel(4)}\nNextCost:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(4), 4))}";
+            button4.text = $"åéÇÃêŒ\nLevel{DataManager.GetSkillLevel(4)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(4), 4))}";
         }
     }
 

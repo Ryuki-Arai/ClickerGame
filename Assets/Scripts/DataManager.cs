@@ -14,11 +14,18 @@ public class DataManager
         set => level = value;
     }
 
+    static int exp = 0;
+    public int Exp
+    {
+        get => exp;
+        set => exp = value;
+    }
+
     static BigInteger count = 1;
     public BigInteger Count
     {
         get => count;
-        set => count = value;
+        set=> count = value;
     }
 
     static int[] skill_Level = new int[5];
@@ -34,6 +41,7 @@ public class DataManager
     static public void Load()
     {
         level = PlayerPrefs.GetInt("Level",1);
+        exp = PlayerPrefs.GetInt("Exp", 0);
         count = BigInteger.Parse(PlayerPrefs.GetString("Count", "0"));
         for(int i = 0; i < skill_Level.Length; i++)
         {
@@ -41,9 +49,10 @@ public class DataManager
         }
     }
 
-    public void Save()
+    static public void Save()
     {
         PlayerPrefs.SetInt("Level", level);
+        PlayerPrefs.SetInt("Exp", exp);
         PlayerPrefs.SetString("Count",count.ToString());
         for (int i = 0; i < skill_Level.Length; i++)
         {

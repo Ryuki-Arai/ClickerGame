@@ -33,5 +33,6 @@ public class Generator : MonoBehaviour
             }
             else _button[i].GetComponent<Button>().interactable = true;
         }
+        DataManager.Save();
     }
 }
