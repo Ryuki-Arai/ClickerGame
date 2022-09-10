@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Numerics;
-using UnityEngine;
 
 /*Numeration
 {
@@ -36,7 +33,7 @@ using UnityEngine;
 
 public class Numeral
 {
-    static public string Numelal(BigInteger bigint)
+    static public string Numeration(BigInteger bigint)
     {
         var len = bigint.ToString().Length;
         string digit = default;

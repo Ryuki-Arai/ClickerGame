@@ -23,7 +23,7 @@ public class GameControler : MonoBehaviour
 
     private void Update()
     {
-        _counter_Text.text = $"{Numeral.Numelal(DataManager.Instance.Count)}\nOTSUKIMI Power";
+        _counter_Text.text = $"{Numeral.Numeration(DataManager.Instance.Count)}\nOTSUKIMI Power";
     }
 
     public void Click()

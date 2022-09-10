@@ -15,8 +15,8 @@ public class LevelUP : MonoBehaviour
     [SerializeField] TextMeshProUGUI button4;
     [SerializeField] TextAsset _lebeluptable;
     [SerializeField] TextAsset _skillcost;
-    ulong[] dummy = {10,100,1000,10000,100000};
-    static List<ulong[]> skill_Cost = new List<ulong[]>();
+    BigInteger[] dummy = {10,100,1000,10000,100000};
+    static List<BigInteger[]> skill_Cost = new List<BigInteger[]>();
     float _time;
 
     private void Awake()
@@ -46,7 +46,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(0), 0);
             DataManager.SetSkillLevel(0);
-            button0.text = $"ícéq\nLevel{DataManager.GetSkillLevel(0)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(0), 0))}";
+            button0.text = $"ícéq\nLevel{DataManager.GetSkillLevel(0)}\néü:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(0), 0))}";
         }
         
     }
@@ -57,7 +57,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(1), 1);
             DataManager.SetSkillLevel(1);
-            button1.text = $"Ç∑Ç∑Ç´\nLevel{DataManager.GetSkillLevel(1)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(1), 1))}";
+            button1.text = $"Ç∑Ç∑Ç´\nLevel{DataManager.GetSkillLevel(1)}\néü:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(1), 1))}";
         }
     }
 
@@ -67,7 +67,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(2), 2);
             DataManager.SetSkillLevel(2);
-            button2.text = $"îu\nLevel{DataManager.GetSkillLevel(2)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(2), 2))}";
+            button2.text = $"îu\nLevel{DataManager.GetSkillLevel(2)}\néü:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(2), 2))}";
         }
     }
 
@@ -77,7 +77,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(3), 3);
             DataManager.SetSkillLevel(3);
-            button3.text = $"ìe\nLevel{DataManager.GetSkillLevel(3)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(3), 3))}";
+            button3.text = $"ìe\nLevel{DataManager.GetSkillLevel(3)}\néü:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(3), 3))}";
         }
     }
 
@@ -87,7 +87,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(4), 4);
             DataManager.SetSkillLevel(4);
-            button4.text = $"åéÇÃêŒ\nLevel{DataManager.GetSkillLevel(4)}\néü:{Numeral.Numelal(GetCost(DataManager.GetSkillLevel(4), 4))}";
+            button4.text = $"åéÇÃêŒ\nLevel{DataManager.GetSkillLevel(4)}\néü:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(4), 4))}";
         }
     }
 
@@ -115,10 +115,10 @@ public class LevelUP : MonoBehaviour
             while ((line = _sr.ReadLine()) != null)
             {
                 var data = line.Split(',');
-                var dArray = new ulong[data.Length];
+                var dArray = new BigInteger[data.Length];
                 for(var i = 0; i < dArray.Length; i++)
                 {
-                    dArray[i] = ulong.Parse(data[i]);
+                    dArray[i] = BigInteger.Parse(data[i]);
                 }
                 skill_Cost.Add(dArray);
             }

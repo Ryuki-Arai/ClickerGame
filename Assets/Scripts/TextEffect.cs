@@ -10,7 +10,7 @@ public class TextEffect : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
         var count = Numeral.Pow(2,DataManager.Instance.Level-1);
         DataManager.Instance.Count += (count);
-        text.text = $"+{Numeral.Numelal(count)}" ;
+        text.text = $"+{Numeral.Numeration(count)}" ;
     }
     public void Destroy()
     {
