@@ -13,10 +13,16 @@ public class LevelUP : MonoBehaviour
     [SerializeField] TextMeshProUGUI button2;
     [SerializeField] TextMeshProUGUI button3;
     [SerializeField] TextMeshProUGUI button4;
+    [SerializeField] TextMeshProUGUI button5;
+    [SerializeField] TextMeshProUGUI button6;
+    [SerializeField] TextMeshProUGUI button7;
+    [SerializeField] TextMeshProUGUI button8;
+    [SerializeField] TextMeshProUGUI button9;
     [SerializeField] TextAsset _lebeluptable;
     [SerializeField] TextAsset _skillcost;
     BigInteger[] dummy = {10,100,1000,10000,100000};
     static List<BigInteger[]> skill_Cost = new List<BigInteger[]>();
+    static public int SkillCost => skill_Cost.Count;
     float _time;
 
     private void Awake()
@@ -29,15 +35,25 @@ public class LevelUP : MonoBehaviour
     private void Start()
     {
         button0.GetComponent<TextMeshProUGUI>();
-        button0.text = $"’cq:{DataManager.GetSkillLevel(0)}\nŸ:{GetCost(DataManager.GetSkillLevel(0), 0).ToString("N0")}";
+        button0.text = $"’cq:{DataManager.GetSkillLevel(0)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(0), 0))}";
         button1.GetComponent<TextMeshProUGUI>();
-        button1.text = $"‚·‚·‚«:{DataManager.GetSkillLevel(1)}\nŸ:{GetCost(DataManager.GetSkillLevel(1), 1).ToString("N0")}";
+        button1.text = $"‚·‚·‚«:{DataManager.GetSkillLevel(1)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(1), 1))}";
         button2.GetComponent<TextMeshProUGUI>();
-        button2.text = $"”u:{DataManager.GetSkillLevel(2)}\nŸ:{GetCost(DataManager.GetSkillLevel(2), 2).ToString("N0")}";
+        button2.text = $"”u:{DataManager.GetSkillLevel(2)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(2), 2))}";
         button3.GetComponent<TextMeshProUGUI>();
-        button3.text = $"“e:{DataManager.GetSkillLevel(3)}\nŸ:{GetCost(DataManager.GetSkillLevel(3), 3).ToString("N0")}";
+        button3.text = $"Œ“e:{DataManager.GetSkillLevel(3)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(3), 3))}";
         button4.GetComponent<TextMeshProUGUI>();
-        button4.text = $"ŒÉÎ:{DataManager.GetSkillLevel(4)}\nŸ:{GetCost(DataManager.GetSkillLevel(4), 4).ToString("N0")}";
+        button4.text = $"ŒÉÎ:{DataManager.GetSkillLevel(4)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(4), 4))}";
+        button5.GetComponent<TextMeshProUGUI>();
+        button5.text = $"Œ‰Ø:{DataManager.GetSkillLevel(5)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(5), 5))}";
+        button6.GetComponent<TextMeshProUGUI>();
+        button6.text = $"ƒAƒ|ƒŒv‰æ:{DataManager.GetSkillLevel(6)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(6), 6))}";
+        button7.GetComponent<TextMeshProUGUI>();
+        button7.text = $"“VÉ‰Hˆß:{DataManager.GetSkillLevel(7)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(7), 7))}";
+        button8.GetComponent<TextMeshProUGUI>();
+        button8.text = $"ŒÉ“s:{DataManager.GetSkillLevel(8)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(8), 8))}";
+        button9.GetComponent<TextMeshProUGUI>();
+        button9.text = $"Œ“ø:{DataManager.GetSkillLevel(9)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(9), 9))}";
     }
 
     public void OnButton0Clecked()
@@ -77,7 +93,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(3), 3);
             DataManager.SetSkillLevel(3);
-            button3.text = $"“e:{DataManager.GetSkillLevel(3)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(3), 3))}";
+            button3.text = $"Œ“e:{DataManager.GetSkillLevel(3)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(3), 3))}";
         }
     }
 
@@ -88,6 +104,56 @@ public class LevelUP : MonoBehaviour
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(4), 4);
             DataManager.SetSkillLevel(4);
             button4.text = $"Œ‚ÌÎ:{DataManager.GetSkillLevel(4)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(4), 4))}";
+        }
+    }
+
+    public void OnButton5Clecked()
+    {
+        if (DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(5), 5))
+        {
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(5), 5);
+            DataManager.SetSkillLevel(5);
+            button5.text = $"Œ‰Ø:{DataManager.GetSkillLevel(5)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(5), 5))}";
+        }
+    }
+
+    public void OnButton6Clecked()
+    {
+        if (DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(6), 6))
+        {
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(6), 6);
+            DataManager.SetSkillLevel(6);
+            button6.text = $"ƒAƒ|ƒŒv‰æ:{DataManager.GetSkillLevel(6)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(6), 6))}";
+        }
+    }
+
+    public void OnButton7Clecked()
+    {
+        if (DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(7), 7))
+        {
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(7), 7);
+            DataManager.SetSkillLevel(7);
+            button7.text = $"“VÉ‰Hˆß:{DataManager.GetSkillLevel(7)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(7), 7))}";
+        }
+    }
+
+    public void OnButton8Clecked()
+    {
+        if (DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(8), 8))
+        {
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(8), 8);
+            DataManager.SetSkillLevel(8);
+            button8.text = $"ŒÉ“s:{DataManager.GetSkillLevel(8)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(8), 8))}";
+        }
+    }
+
+    public void OnButton9Clecked()
+    {
+        if (DataManager.Instance.Count >= GetCost(DataManager.GetSkillLevel(9), 9))
+        {
+            DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(9), 9);
+            DataManager.SetSkillLevel(9);
+            button9.text = $"Œ“ø:{DataManager.GetSkillLevel(9)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(9), 9))}";
         }
     }
 

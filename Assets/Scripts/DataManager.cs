@@ -28,7 +28,7 @@ public class DataManager
         set=> count = value;
     }
 
-    static int[] skill_Level = new int[5];
+    static int[] skill_Level = new int[10];
     static public int GetSkillLevel(int index)
     {
         return skill_Level[index];
