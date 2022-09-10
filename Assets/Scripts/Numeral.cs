@@ -37,10 +37,15 @@ public class Numeral
     {
         var len = bigint.ToString().Length;
         string digit = default;
-        if (303 < len) digit = $"{((float)(bigint / Pow(10, 300)) / 1000).ToString("F3")} Centillion";
+        if(306 < len) digit = $"{(bigint / Pow(10, 303)).ToString("N0")} Centillion";
+        else if (303 < len) digit = $"{((float)(bigint / Pow(10, 300)) / 1000).ToString("F3")} Centillion";
+        else if (126 < len) digit = $"{(bigint / Pow(10, 123)).ToString("N0")} Quadragintillion";
         else if (123 < len) digit = $"{((float)(bigint / Pow(10, 120)) / 1000).ToString("F3")} Quadragintillion";
+        else if (103 < len) digit = $"{(bigint / Pow(10, 100)).ToString("N0")} Googol";
         else if (100 < len) digit = $"{((float)(bigint / Pow(10, 97)) / 1000).ToString("F3")} Googol";
+        else if (96 < len) digit = $"{(bigint / Pow(10, 93)).ToString("N0")} Trigintillion";
         else if (93 < len) digit = $"{((float)(bigint / Pow(10, 90)) / 1000).ToString("F3")} Trigintillion";
+        else if (75 < len) digit = $"{(bigint / Pow(10, 72)).ToString("N0")} Tresvigintillion";
         else if (72 < len) digit = $"{((float)(bigint / Pow(10, 69)) / 1000).ToString("F3")} Tresvigintillion";
         else if (69 < len) digit = $"{((float)(bigint / Pow(10, 66)) / 1000).ToString("F3")} Duovigintillion";
         else if (66 < len) digit = $"{((float)(bigint / Pow(10, 63)) / 1000).ToString("F3")} Unvigintillion";

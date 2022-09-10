@@ -29,15 +29,15 @@ public class LevelUP : MonoBehaviour
     private void Start()
     {
         button0.GetComponent<TextMeshProUGUI>();
-        button0.text = $"’cq\nLevel{DataManager.GetSkillLevel(0)}\nŸ:{GetCost(DataManager.GetSkillLevel(0), 0).ToString("N0")}";
+        button0.text = $"’cq:{DataManager.GetSkillLevel(0)}\nŸ:{GetCost(DataManager.GetSkillLevel(0), 0).ToString("N0")}";
         button1.GetComponent<TextMeshProUGUI>();
-        button1.text = $"‚·‚·‚«\nLevel{DataManager.GetSkillLevel(1)}\nŸ:{GetCost(DataManager.GetSkillLevel(1), 1).ToString("N0")}";
+        button1.text = $"‚·‚·‚«:{DataManager.GetSkillLevel(1)}\nŸ:{GetCost(DataManager.GetSkillLevel(1), 1).ToString("N0")}";
         button2.GetComponent<TextMeshProUGUI>();
-        button2.text = $"”u\nLevel{DataManager.GetSkillLevel(2)}\nŸ:{GetCost(DataManager.GetSkillLevel(2), 2).ToString("N0")}";
+        button2.text = $"”u:{DataManager.GetSkillLevel(2)}\nŸ:{GetCost(DataManager.GetSkillLevel(2), 2).ToString("N0")}";
         button3.GetComponent<TextMeshProUGUI>();
-        button3.text = $"“e\nLevel{DataManager.GetSkillLevel(3)}\nŸ:{GetCost(DataManager.GetSkillLevel(3), 3).ToString("N0")}";
+        button3.text = $"“e:{DataManager.GetSkillLevel(3)}\nŸ:{GetCost(DataManager.GetSkillLevel(3), 3).ToString("N0")}";
         button4.GetComponent<TextMeshProUGUI>();
-        button4.text = $"ŒÉÎ\nLevel{DataManager.GetSkillLevel(4)}\nŸ:{GetCost(DataManager.GetSkillLevel(4), 4).ToString("N0")}";
+        button4.text = $"ŒÉÎ:{DataManager.GetSkillLevel(4)}\nŸ:{GetCost(DataManager.GetSkillLevel(4), 4).ToString("N0")}";
     }
 
     public void OnButton0Clecked()
@@ -46,7 +46,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(0), 0);
             DataManager.SetSkillLevel(0);
-            button0.text = $"’cq\nLevel{DataManager.GetSkillLevel(0)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(0), 0))}";
+            button0.text = $"’cq:{DataManager.GetSkillLevel(0)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(0), 0))}";
         }
         
     }
@@ -57,7 +57,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(1), 1);
             DataManager.SetSkillLevel(1);
-            button1.text = $"‚·‚·‚«\nLevel{DataManager.GetSkillLevel(1)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(1), 1))}";
+            button1.text = $"‚·‚·‚«:{DataManager.GetSkillLevel(1)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(1), 1))}";
         }
     }
 
@@ -67,7 +67,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(2), 2);
             DataManager.SetSkillLevel(2);
-            button2.text = $"”u\nLevel{DataManager.GetSkillLevel(2)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(2), 2))}";
+            button2.text = $"”u:{DataManager.GetSkillLevel(2)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(2), 2))}";
         }
     }
 
@@ -77,7 +77,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(3), 3);
             DataManager.SetSkillLevel(3);
-            button3.text = $"“e\nLevel{DataManager.GetSkillLevel(3)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(3), 3))}";
+            button3.text = $"“e:{DataManager.GetSkillLevel(3)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(3), 3))}";
         }
     }
 
@@ -87,7 +87,7 @@ public class LevelUP : MonoBehaviour
         {
             DataManager.Instance.Count -= GetCost(DataManager.GetSkillLevel(4), 4);
             DataManager.SetSkillLevel(4);
-            button4.text = $"Œ‚ÌÎ\nLevel{DataManager.GetSkillLevel(4)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(4), 4))}";
+            button4.text = $"Œ‚ÌÎ:{DataManager.GetSkillLevel(4)}\nŸ:{Numeral.Numeration(GetCost(DataManager.GetSkillLevel(4), 4))}";
         }
     }
 
